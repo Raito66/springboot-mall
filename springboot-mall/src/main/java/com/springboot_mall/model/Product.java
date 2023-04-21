@@ -13,6 +13,8 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.springboot_mall.constant.ProductCategory;
+
 @Entity
 @Table(name = "product")
 public class Product {
@@ -26,7 +28,7 @@ public class Product {
 	private String productName;
 	
 	@Column(name = "category")
-	private String category;
+	private ProductCategory category;
 	
 	@Column(name = "image_url")
 	private String imageUrl;
@@ -63,11 +65,11 @@ public class Product {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public String getCategory() {
+	public ProductCategory getCategory() {
 		return category;
 	}
-	public void setCategory(String category) {
-		this.category = category;
+	public void setCategory(ProductCategory category2) {
+		this.category = category2;
 	}
 	public String getImageUrl() {
 		return imageUrl;
