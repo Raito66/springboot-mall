@@ -13,6 +13,7 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.springboot_mall.constant.ProductCategory;
 
 @Entity
@@ -42,13 +43,11 @@ public class Product {
 	@Column(name = "description")
 	private String description;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
 	@Column(name = "created_date")
 	private Date createdDate;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
 	@Column(name = "last_modified_date")
 	private Date lastModifiedDate;
 	
