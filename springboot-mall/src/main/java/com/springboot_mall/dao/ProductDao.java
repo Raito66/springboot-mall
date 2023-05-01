@@ -2,12 +2,13 @@ package com.springboot_mall.dao;
 
 import java.util.List;
 
+import com.springboot_mall.constant.ProductCategory;
 import com.springboot_mall.dto.ProductRequest;
 import com.springboot_mall.model.Product;
 
 public interface ProductDao {
 
-	List<Product> getProducts();
+	List<Product> getProducts(ProductCategory category,String search);
 	
 	Product getProductById(Integer productId); 
 
