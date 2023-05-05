@@ -2,13 +2,13 @@ package com.springboot_mall.service;
 
 import java.util.List;
 
-import com.springboot_mall.constant.ProductCategory;
+import com.springboot_mall.dto.ProductQueryParams;
 import com.springboot_mall.dto.ProductRequest;
 import com.springboot_mall.model.Product;
 
 public interface ProductService {
 	
-	List<Product> getProducts(ProductCategory category, String search);
+	List<Product> getProducts(ProductQueryParams productQueryParams);
 	
 	Product getProductById(Integer productId); 
 	
