@@ -1,6 +1,7 @@
 package com.light.springbootmall.service.impl;
 
 import com.light.springbootmall.dao.UserDao;
+import com.light.springbootmall.dto.UserLoginRequest;
 import com.light.springbootmall.dto.UserRegisterRequest;
 import com.light.springbootmall.model.User;
 import com.light.springbootmall.service.UserService;
@@ -11,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.server.handler.ResponseStatusExceptionHandler;
-
 
 
 @Component
@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
         // 檢查註冊的 email
         User user = userDao.getUserByEmail(userRegisterRequest.getEmail());
 
-        if(user != null) {
+        if (user != null) {
             log.warn("該 email {} 已被註冊", userRegisterRequest.getEmail());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
@@ -41,5 +41,18 @@ public class UserServiceImpl implements UserService {
         return userDao.createUser(userRegisterRequest);
     }
 
-
+    @Override
+    public User login(UserLoginRequest userLoginRequest) {
+        User user = userDao.getUserByEmail(userLoginRequest.getEmail());
+        if (user == null) {
+            log.warn("該 email {} 尚未註冊", userLoginRequest.getEmail());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+        if (user.getPassword().equals(userLoginRequest.getPassword())) {
+            return user;
+        } else {
+            log.warn("email {} 的密碼不正確", userLoginRequest.getEmail());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+    }
 }

@@ -1,6 +1,7 @@
 package com.light.springbootmall.dao.impl;
 
 import com.light.springbootmall.dao.UserDao;
+import com.light.springbootmall.dto.UserLoginRequest;
 import com.light.springbootmall.dto.UserRegisterRequest;
 import com.light.springbootmall.model.User;
 import com.light.springbootmall.rowmapper.UserRowMapper;
@@ -79,4 +80,5 @@ public class UserDaoImpl implements UserDao {
 
         return userId;
     }
+
 }
