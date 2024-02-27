@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Dashboard</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<header>
+    <h1>歡迎來到貓貓購物商城</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="./index.html">商品</a></li>
+            <li><a href="./userOrder.html">訂單</a></li>
+            <li><a href="#">關於</a></li>
+            <li><a href="#">登出</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+        <form id="productFilterForm" class="form-inline">
+            <div class="form-group mr-auto">
+                <label for="categorySelect" class="col-sm-5 col-form-label">搜尋:</label>
+                <div class="col-sm-6">
+                    <input type="text" id="searchInput" class="form-control" style="width: 150px;" placeholder="Search...">
+                </div>
+            </div>
+
+
+            <div class="form-group mr-5">
+                <label for="categorySelect" class="col-sm-5 col-form-label">類別:</label>
+                <div class="col-sm-6">
+                    <select id="categorySelect" class="form-control">
+                        <option value="">全部</option>
+                        <option value="FOOD">食物</option>
+                        <option value="CAR">車子</option>
+                        <option value="E_BOOK">電子書</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">查詢</button>
+
+            <div class="form-group ml-auto">
+                <label for="orderBySelect" class="col-sm-5 col-form-label">排序:</label>
+                <div class="col-sm-6">
+                    <select id="orderBySelect" class="form-control">
+                        <option value="created_date">創建日期</option>
+                        <option value="price">價錢</option>
+                        <!-- 其他排序字段选项 -->
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group mr-3 ml-3"> <!-- 添加了 mr-3 和 ml-3 类 -->
+                <select id="sortSelect" class="form-control">
+                    <option value="desc">由大到小</option>
+                    <option value="asc">由小到大</option>
+                </select>
+            </div>
+
+
+        </form>
+    </div>
+
+
+    <section class="products">
+        <h2>商品列表</h2>
+        <div style="margin-bottom: 20px;"></div>
+        <div class="carousel" id="productCarousel">
+            <!-- Products will be dynamically added here -->
+        </div>
+    </section>
+
+    <!-- Pagination section -->
+    <div id="pagination" class="pagination"></div>
+</main>
+
+
+<footer>
+    <p>2024 light.hung</p>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+    <h1>歡迎來到貓貓購物商城</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="./index.html">商品</a></li>
+            <li><a href="#">訂單</a></li>
+            <li><a href="#">關於</a></li>
+            <li><a href="#">登出</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+<div class="cartContainer">
+    <h1>購物車</h1>
+    <div id="productInfo" class="card p-3">
+        <img id="productImage" src="" alt="商品圖片" style="max-width: 200px; max-height: 200px;"> <!-- 商品圖片位置 -->
+        <h2 id="productName">商品名稱</h2>
+        <p id="productCategory">類別: </p>
+        <p id="productPrice">價錢: $</p>
+        <p id="productStock">庫存: </p>
+        <div>
+            <label for="quantity">下單數量: </label>
+            <button id="decreaseQtyBtn">-</button>
+            <input type="number" id="quantity" min="1" value="1" style="width: 50px;">
+            <button id="increaseQtyBtn">+</button>
+        </div>
+    </div>
+    <div id="totalPrice" class="mt-3">
+        總金額: $<span id="totalAmount">0</span>
+    </div>
+    <button id="checkoutBtn" class="btn btn-primary mt-3">結帳</button>
+    <a href="index.html" class="btn btn-secondary mt-3">返回</a> <!-- 返回按钮 -->
+</div>
+</main>
+<footer>
+    <p>2024 light.hung</p>
+</footer>
+<script src="../js/shoppingCart.js"></script>
+</body>
+</html>

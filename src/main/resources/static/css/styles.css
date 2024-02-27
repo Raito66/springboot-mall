@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.cartContainer {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px; /* 如果您想限制內容的最大寬度，請將此值調整為您想要的寬度 */
+    text-align: center; /* 将内容置于容器的中间 */
+}
+
+
+.products {
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+}
+
+.product {
+    position: relative; /* 设置相对定位 */
+    width: calc(50% - 20px); /* 让每个产品项占据一行的一半，减去间距 */
+    box-sizing: border-box; /* 让边框和填充包含在宽度内 */
+    padding: 20px;
+    margin-bottom: 20px; /* 添加底部间距 */
+    border: 1px solid #ccc; /* 添加边框 */
+}
+
+.cart-icon {
+    position: absolute; /* 设置绝对定位 */
+    bottom: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #df5334;
+    cursor: pointer;
+}
+
+.card.p-3 {
+    border: 1px solid #dee2e6; /* 修改邊框寬度和顏色 */
+    width: 40%; /* 調整整個card p-3的寬度 */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; /* 将内容置于容器的中间 */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
